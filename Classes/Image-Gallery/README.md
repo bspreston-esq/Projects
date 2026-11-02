@@ -23,8 +23,8 @@ python3 main.py --demo
 
 ```text
 indexed 3 images
-PNG    sunset.png                320x240  RGB
+GIF    forest.gif                320x240  P
 JPEG   ocean.jpg                 320x240  RGB
-GIF    forest.gif                320x240  RGB
-html written: 14522 bytes, embedded thumbnails: 3
+PNG    sunset.png                320x240  RGB
+html written: 5115 bytes, embedded thumbnails: 3
 ```
