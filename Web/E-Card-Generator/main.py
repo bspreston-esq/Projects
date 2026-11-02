@@ -47,15 +47,17 @@ def generate(template: str, name: str, sender: str, message: str = "", image_url
                        accent1=accent1, accent2=accent2)
 
 def demo() -> None:
+    import tempfile
     cards = [
         ("birthday", "Ada", "Grace", "", ""),
         ("thankyou", "Alan", "Katherine", "Thanks for the review, it genuinely helped.", ""),
     ]
-    for template, name, sender, message, image in cards:
-        output = f"ecard_{template}.html"
-        with open(output, "w", encoding="utf-8") as fh:
-            fh.write(generate(template, name, sender, message, image))
-        print(f"{output}: {os.path.getsize(output)} bytes, title contains '{name}': {name in open(output).read()}")
+    with tempfile.TemporaryDirectory() as tmp:
+        for template, name, sender, message, image in cards:
+            output = os.path.join(tmp, f"ecard_{template}.html")
+            with open(output, "w", encoding="utf-8") as fh:
+                fh.write(generate(template, name, sender, message, image))
+            print(f"ecard_{template}.html: {os.path.getsize(output)} bytes, title contains '{name}': {name in open(output).read()}")
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
