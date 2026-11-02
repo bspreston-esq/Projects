@@ -10,7 +10,8 @@ def fast_pow(base: int, exponent: int, modulus=None):
             raise ValueError("negative exponents are not supported with a modulus")
         return 1 / fast_pow(base, -exponent)
     result = 1
-    base %= modulus if modulus else None
+    if modulus:
+        base %= modulus
     while exponent:
         if exponent & 1:
             result = result * base
