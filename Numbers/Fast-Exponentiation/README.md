@@ -24,9 +24,9 @@ python3 main.py --demo
 
 ```text
 2^10 = 1024 (matches **: True)
-3^20 = 3486784401 (matches **: True)
+3^20 = 3.48678e+09 (matches **: True)
 7^0 = 1 (matches **: True)
 2^100 = 1.26765e+30 (matches **: True)
 5^-2 = 0.04 (matches **: True)
-2^1000000 mod 1000000007 = 607723520
+2^1000000 mod 1000000007 = 235042059
 ```
